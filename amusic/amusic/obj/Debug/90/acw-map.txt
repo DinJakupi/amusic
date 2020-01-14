@@ -1,3 +1,6 @@
+amusic.AudioPlayer, amusic;crc64e9990723d8924521.AudioPlayer
+amusic.AudioPlayer;crc64e9990723d8924521.AudioPlayer
+amusic.AudioPlayer;crc64e9990723d8924521.AudioPlayer
 amusic.MainActivity, amusic;crc64e9990723d8924521.MainActivity
 amusic.MainActivity;crc64e9990723d8924521.MainActivity
 amusic.MainActivity;crc64e9990723d8924521.MainActivity

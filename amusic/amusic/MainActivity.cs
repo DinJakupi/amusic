@@ -10,6 +10,7 @@ namespace amusic
     [Activity(Label = "amusic", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        public AudioPlayer audioPlayer;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,6 +25,8 @@ namespace amusic
             playButton.Click += (sender, e) =>
             {
                 //code to play music
+                audioPlayer = new AudioPlayer();               
+                audioPlayer.StartPlayer(); 
             };
 
             backButton.Click += (sender, e) =>
