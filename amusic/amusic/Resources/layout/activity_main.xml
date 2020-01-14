@@ -1,7 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:text="play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/playButton"
+        android:layout_marginLeft="160.5dp"
+        android:layout_marginTop="351.5dp" 
+    />
+
+    <Button
+        android:text="back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/backButton"
+        android:layout_marginLeft="64.5dp"
+        android:layout_marginTop="351.5dp"
+        android:layout_marginRight="369.8dp" 
+    />
+
+    <Button
+        android:text="skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/skipButton"
+        android:layout_marginLeft="249.6dp"
+        android:layout_marginTop="351.5dp"
+        android:layout_marginRight="15.3dp" 
+    />
+
 </RelativeLayout>
