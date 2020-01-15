@@ -265,6 +265,8 @@ C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\Plugin.SimpleAudioPl
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\Plugin.SimpleAudioPlayer.dll
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\Plugin.SimpleAudioPlayer.dll.mdb
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\System.IO.dll
-C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
 C:\develop\amusic\amusic\amusic\obj\Debug\90\res\drawable\skipicon.png
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\src\crc64e9990723d8924521\Music.java
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\layout\activity_music.xml
+C:\develop\amusic\amusic\amusic\obj\Debug\90\android\src\crc64e9990723d8924521\MusicActivity.java
+C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp

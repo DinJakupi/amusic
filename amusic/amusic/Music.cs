@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,11 @@ namespace amusic
 {
     public class Music : MainActivity
     {
+        public ArrayAdapter<string> adapter;
         public List<String> songList;
-        public void MusicList() 
+        public string songName; 
+
+        public List<String> MusicList() 
         {
             var allSongs = typeof(Resource.Raw).GetFields();
             songList = new List<String>();
@@ -25,6 +29,21 @@ namespace amusic
             {
                 songList.Add(song.Name);
             }
+            return songList;
         }
+
+        public void ListViewMusic(ListView musicListView)
+        {
+            try
+            {
+                adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, songList);
+                musicListView.Adapter = adapter;
+            } 
+            catch
+            {
+            }
+        }
+
+
     }
 }

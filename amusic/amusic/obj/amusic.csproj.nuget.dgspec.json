@@ -38,6 +38,14 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
+            "System.Collections": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Collections.NonGeneric": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Xam.Plugin.SimpleAudioPlayer": {
               "target": "Package",
               "version": "[1.4.0, )"

@@ -14,6 +14,7 @@ namespace amusic
     {
         public AudioPlayer audioPlayer;
         public MediaPlayer mediaPlayer;
+        public Music music;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -22,12 +23,10 @@ namespace amusic
             SetContentView(Resource.Layout.activity_main);
 
             FloatingActionButton playButton = FindViewById<FloatingActionButton>(Resource.Id.playButton);
+            FloatingActionButton musicButton = FindViewById<FloatingActionButton>(Resource.Id.musicButton);
             Button backButton = FindViewById<Button>(Resource.Id.backButton);
             Button skipButton = FindViewById<Button>(Resource.Id.skipButton);
             mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
-
-            Music music = new Music();
-            music.MusicList();
 
             playButton.Click += (sender, e) =>
             {
@@ -50,6 +49,11 @@ namespace amusic
             skipButton.Click += (sender, e) =>
             {
                 //code to  skip a song
+            };
+
+            musicButton.Click += (sender, e) =>
+            {
+                StartActivity(typeof(MusicActivity));
             }; 
 
         }
