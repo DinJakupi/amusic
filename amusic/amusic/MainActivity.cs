@@ -26,6 +26,9 @@ namespace amusic
             Button skipButton = FindViewById<Button>(Resource.Id.skipButton);
             mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
 
+            Music music = new Music();
+            music.MusicList();
+
             playButton.Click += (sender, e) =>
             {
                 //code to play music

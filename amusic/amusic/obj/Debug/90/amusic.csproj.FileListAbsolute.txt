@@ -267,3 +267,4 @@ C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\Plugin.SimpleAudioPl
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\assets\System.IO.dll
 C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\SetupDependenciesForDesigner.stamp
 C:\develop\amusic\amusic\amusic\obj\Debug\90\res\drawable\skipicon.png
+C:\develop\amusic\amusic\amusic\obj\Debug\90\android\src\crc64e9990723d8924521\Music.java

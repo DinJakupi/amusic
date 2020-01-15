@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -12,7 +13,18 @@ using Android.Widget;
 
 namespace amusic
 {
-    class Music
+    public class Music : MainActivity
     {
+        public List<String> songList;
+        public void MusicList() 
+        {
+            var allSongs = typeof(Resource.Raw).GetFields();
+            songList = new List<String>();
+
+            foreach(var song in allSongs)
+            {
+                songList.Add(song.Name);
+            }
+        }
     }
 }
