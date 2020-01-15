@@ -5,6 +5,7 @@ using Android.Runtime;
 using Android.Widget;
 using Android.Views;
 using Android.Media;
+using Android.Support.Design.Widget;
 
 namespace amusic
 {
@@ -20,7 +21,7 @@ namespace amusic
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            Button playButton = FindViewById<Button>(Resource.Id.playButton);
+            FloatingActionButton playButton = FindViewById<FloatingActionButton>(Resource.Id.playButton);
             Button backButton = FindViewById<Button>(Resource.Id.backButton);
             Button skipButton = FindViewById<Button>(Resource.Id.skipButton);
             mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
