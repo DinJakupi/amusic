@@ -4,6 +4,7 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using Android.Views;
+using Android.Media;
 
 namespace amusic
 {
@@ -11,6 +12,7 @@ namespace amusic
     public class MainActivity : AppCompatActivity
     {
         public AudioPlayer audioPlayer;
+        public MediaPlayer mediaPlayer;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -21,12 +23,19 @@ namespace amusic
             Button playButton = FindViewById<Button>(Resource.Id.playButton);
             Button backButton = FindViewById<Button>(Resource.Id.backButton);
             Button skipButton = FindViewById<Button>(Resource.Id.skipButton);
+            mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
 
             playButton.Click += (sender, e) =>
             {
                 //code to play music
-                audioPlayer = new AudioPlayer();               
-                audioPlayer.StartPlayer(); 
+                audioPlayer = new AudioPlayer();
+                if (!mediaPlayer.IsPlaying)
+                {
+                    audioPlayer.StartPlayer(mediaPlayer);
+                } else
+                {
+                    audioPlayer.StopPlayer(mediaPlayer);
+                }
             };
 
             backButton.Click += (sender, e) =>

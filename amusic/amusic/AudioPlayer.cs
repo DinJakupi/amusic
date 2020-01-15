@@ -11,15 +11,23 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Plugin.SimpleAudioPlayer; 
 
 namespace amusic
 {
     public class AudioPlayer : MainActivity
     {
-        public MediaPlayer mediaPlayer;
-
-        public void StartPlayer()
+        public bool StartPlayer(MediaPlayer mediaPlayer)
         {
+            //Start Android Media Player
+            mediaPlayer.Start();
+            return true;
+        }
+
+        public bool StopPlayer(MediaPlayer mediaPlayer)
+        {
+            mediaPlayer.Pause();
+            return true; 
         }
     }
 }

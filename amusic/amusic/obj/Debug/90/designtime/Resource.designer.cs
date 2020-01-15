@@ -4131,9 +4131,6 @@ namespace amusic
 		public partial class Raw
 		{
 			
-			// aapt resource value: 0x7F0D0001
-			public const int song = 2131558401;
-			
 			// aapt resource value: 0x7F0D0000
 			public const int TheGrinch = 2131558400;
 			
