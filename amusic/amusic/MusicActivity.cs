@@ -33,24 +33,25 @@ namespace amusic
                 AudioPlayer audioPlayer = new AudioPlayer(); 
 
                 var songName = adapter.GetItem(e.Position);
-                audioPlayer.StartPlayer(SetSong(songName));
+                audioPlayer.CheckMediaPlayerIsPlaying(this, SetSong(songName));
+                var activity = new Intent(this, typeof(MainActivity));
                 StartActivity(typeof(MainActivity));
             }; 
         }
 
-        public MediaPlayer SetSong(string songName)
+        public int SetSong(string songName)
         {
             MediaPlayer mediaPlayer = new MediaPlayer();
-
             switch (songName)
             {
                 case "TheGrinch":
-                    return mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
+                    return Resource.Raw.TheGrinch;
                 case "GangGang":
-                    return mediaPlayer = MediaPlayer.Create(this, Resource.Raw.GangGang);
+                    return Resource.Raw.GangGang;
             }
 
-            return mediaPlayer;
+            return 0;
         }
+
     }
 }

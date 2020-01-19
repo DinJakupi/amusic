@@ -19,25 +19,47 @@ namespace amusic
 {
     public class AudioPlayer : MainActivity
     {
-        public bool StartPlayer(MediaPlayer mediaPlayer)
+
+        public static MediaPlayer mediaPlayer;
+        public bool StartPlayer()
         {
             //Start Android Media Player
-            mediaPlayer.Start();
+            if(mediaPlayer != null)
+            {
+                mediaPlayer.Start();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool StopPlayer()
+        {
+            try
+            {
+                mediaPlayer.Pause();
+            }
+            catch
+            {
+                //some error has occured
+            }
             return true; 
         }
 
-        public bool StopPlayer(MediaPlayer mediaPlayer)
+        public void CheckMediaPlayerIsPlaying(Context c, int id)
         {
-            mediaPlayer.Pause();
-            return true; 
+            mediaPlayer = MediaPlayer.Create(c, id);
+            if (!mediaPlayer.IsPlaying)
+            {
+                StartPlayer();
+            }
+            else
+            {
+                StopPlayer();
+            }
         }
-
-        public MediaPlayer GetMediaPlayer(MediaPlayer mediaPlayer)
-        {
-            MediaPlayer newMediaPlayer = mediaPlayer;
-            return newMediaPlayer;
-        }
-
 
     }
 }
