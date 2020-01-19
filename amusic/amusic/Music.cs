@@ -7,6 +7,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -18,7 +19,6 @@ namespace amusic
     {
         public ArrayAdapter<string> adapter;
         public List<String> songList;
-        public string songName; 
 
         public List<String> MusicList() 
         {
@@ -32,18 +32,10 @@ namespace amusic
             return songList;
         }
 
-        public void ListViewMusic(ListView musicListView)
+        public MediaPlayer MediaPlayerSong(MediaPlayer mediaPlayer, Resource.Raw raw)
         {
-            try
-            {
-                adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, songList);
-                musicListView.Adapter = adapter;
-            } 
-            catch
-            {
-            }
+            return mediaPlayer; 
         }
-
 
     }
 }

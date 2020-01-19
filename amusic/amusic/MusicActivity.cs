@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -29,8 +30,27 @@ namespace amusic
 
             musicListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
             {
+                AudioPlayer audioPlayer = new AudioPlayer(); 
+
                 var songName = adapter.GetItem(e.Position);
+                audioPlayer.StartPlayer(SetSong(songName));
+                StartActivity(typeof(MainActivity));
             }; 
+        }
+
+        public MediaPlayer SetSong(string songName)
+        {
+            MediaPlayer mediaPlayer = new MediaPlayer();
+
+            switch (songName)
+            {
+                case "TheGrinch":
+                    return mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
+                case "GangGang":
+                    return mediaPlayer = MediaPlayer.Create(this, Resource.Raw.GangGang);
+            }
+
+            return mediaPlayer;
         }
     }
 }

@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.Views;
 using Android.Media;
 using Android.Support.Design.Widget;
+using Android.Webkit;
 
 namespace amusic
 {
@@ -24,31 +25,27 @@ namespace amusic
 
             FloatingActionButton playButton = FindViewById<FloatingActionButton>(Resource.Id.playButton);
             FloatingActionButton musicButton = FindViewById<FloatingActionButton>(Resource.Id.musicButton);
-            Button backButton = FindViewById<Button>(Resource.Id.backButton);
-            Button skipButton = FindViewById<Button>(Resource.Id.skipButton);
-            mediaPlayer = MediaPlayer.Create(this, Resource.Raw.TheGrinch);
 
             playButton.Click += (sender, e) =>
             {
                 //code to play music
                 audioPlayer = new AudioPlayer();
-                if (!mediaPlayer.IsPlaying)
+                try
                 {
-                    audioPlayer.StartPlayer(mediaPlayer);
-                } else
+                    if (!mediaPlayer.IsPlaying)
+                    {
+                        audioPlayer.StartPlayer(mediaPlayer);
+                    }
+                    else
+                    {
+                        audioPlayer.StopPlayer(mediaPlayer);
+                    }
+                }
+                catch
                 {
                     audioPlayer.StopPlayer(mediaPlayer);
                 }
-            };
 
-            backButton.Click += (sender, e) =>
-            {
-                //code to go back an song
-            };
-
-            skipButton.Click += (sender, e) =>
-            {
-                //code to  skip a song
             };
 
             musicButton.Click += (sender, e) =>

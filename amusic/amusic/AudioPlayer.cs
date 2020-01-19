@@ -6,10 +6,12 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.Res;
 using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 using Plugin.SimpleAudioPlayer; 
 
@@ -21,13 +23,19 @@ namespace amusic
         {
             //Start Android Media Player
             mediaPlayer.Start();
-            return true;
+            return true; 
         }
 
         public bool StopPlayer(MediaPlayer mediaPlayer)
         {
             mediaPlayer.Pause();
             return true; 
+        }
+
+        public MediaPlayer GetMediaPlayer(MediaPlayer mediaPlayer)
+        {
+            MediaPlayer newMediaPlayer = mediaPlayer;
+            return newMediaPlayer;
         }
 
 
