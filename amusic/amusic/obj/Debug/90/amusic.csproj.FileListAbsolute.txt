@@ -273,3 +273,8 @@ C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\develop\amusic\amusic\amusic\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\develop\amusic\amusic\amusic\obj\Debug\90\android\src\crc64e9990723d8924521\AccelerometerSensor.java
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\raw\backinback.mp3
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\raw\darkness.mp3
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\raw\kamikaze.mp3
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\raw\thunderstuck.mp3
+C:\develop\amusic\amusic\amusic\obj\Debug\90\res\raw\youshookmeallnightlong.mp3

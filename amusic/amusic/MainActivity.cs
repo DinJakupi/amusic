@@ -11,41 +11,31 @@ using System;
 
 namespace amusic
 {
-    [Activity(Label = "amusic", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Icon = "@drawable/logo" ,Label = "amusic", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, Android.Hardware.ISensorEventListener
     {
         public AudioPlayer audioPlayer;
         public Music music;
         public MediaPlayer mediaPlayer;
-
         bool hasUpdated = false;
         DateTime lastUpdate;
         float last_x = 0.0f;
         float last_y = 0.0f;
         float last_z = 0.0f;
 
-        const int ShakeDetectionTimeLapse = 200;
-        const double ShakeThreshold = 200;
+        const int ShakeDetectionTimeLapse = 300;
+        const double ShakeThreshold = 50;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
-            FloatingActionButton playButton = FindViewById<FloatingActionButton>(Resource.Id.playButton);
             FloatingActionButton musicButton = FindViewById<FloatingActionButton>(Resource.Id.musicButton);
 
             var sensorManager = GetSystemService(SensorService) as Android.Hardware.SensorManager;
             var sensor = sensorManager.GetDefaultSensor(Android.Hardware.SensorType.Accelerometer);
             sensorManager.RegisterListener(this, sensor, Android.Hardware.SensorDelay.Game);
-
-            playButton.Click += (sender, e) =>
-            {
-                //code to play music
-                audioPlayer = new AudioPlayer();
-                audioPlayer.StopPlayer(); 
-            };
 
             musicButton.Click += (sender, e) =>
             {
@@ -66,6 +56,7 @@ namespace amusic
 
         public void OnSensorChanged(Android.Hardware.SensorEvent e)
          {
+            //Trigger of the Accelerometer Sensor
             audioPlayer = new AudioPlayer(); 
             if (e.Sensor.Type == Android.Hardware.SensorType.Accelerometer)
             {
@@ -86,6 +77,7 @@ namespace amusic
                 {
                     if ((curTime - lastUpdate).TotalMilliseconds > ShakeDetectionTimeLapse)
                     {
+                        //ccalculation for the speed of the Shake
                         float diffTime = (float)(curTime - lastUpdate).TotalMilliseconds;
                         lastUpdate = curTime;
                         float total = x + y + z - last_x - last_y - last_z;
@@ -93,6 +85,7 @@ namespace amusic
 
                         if (speed > ShakeThreshold)
                         {
+                            //Detect if Smartphone shaked
                             Toast.MakeText(this, "shake detected w/ speed: " + speed, ToastLength.Short).Show();
                             audioPlayer.StartPlayer();
                         }

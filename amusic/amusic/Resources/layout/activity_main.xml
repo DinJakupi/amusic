@@ -8,11 +8,11 @@
     android:background="#ff4a148c"
     android:gravity="center">
     <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
         android:src="@drawable/logo"
-        android:id="@+id/imageView" />
-
+        android:id="@+id/imageView" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
 
     <TableRow
         android:layout_height="wrap_content"
@@ -20,24 +20,12 @@
         android:gravity="center"
         >
         <android.support.design.widget.FloatingActionButton
-            android:text="play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:id="@+id/playButton"
-            android:src="@android:drawable/ic_media_play"
-            android:layout_marginTop="13.5dp"
-            android:layout_marginBottom="6.5dp"
-            android:gravity="center"
-            />
-        <android.support.design.widget.FloatingActionButton
             android:id="@+id/musicButton"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_column="3"
             android:gravity="center"
-            android:src="@android:drawable/btn_star"
+            android:src="@android:drawable/ic_media_play"
             android:layout_marginTop="13.5dp"
             android:layout_marginBottom="6.5dp" 
         />

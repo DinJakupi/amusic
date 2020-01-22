@@ -37,6 +37,7 @@ namespace amusic
 
         public bool StopPlayer()
         {
+            //Stops the MediaPlayer
             try
             {
                 mediaPlayer.Pause();
@@ -50,6 +51,7 @@ namespace amusic
 
         public void CheckMediaPlayerIsPlaying(Context c, int id)
         {
+            //checks if a MediaPlayer is already running
             mediaPlayer = MediaPlayer.Create(c, id);
             if (!mediaPlayer.IsPlaying)
             {

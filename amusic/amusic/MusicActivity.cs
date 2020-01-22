@@ -32,6 +32,7 @@ namespace amusic
             {
                 AudioPlayer audioPlayer = new AudioPlayer(); 
 
+                //This gets the Song Name & is starting the Media Player
                 var songName = adapter.GetItem(e.Position);
                 audioPlayer.CheckMediaPlayerIsPlaying(this, SetSong(songName));
                 var activity = new Intent(this, typeof(MainActivity));
@@ -41,6 +42,7 @@ namespace amusic
 
         public int SetSong(string songName)
         {
+            //Set th Song who is going to play in the MediaPlayer
             MediaPlayer mediaPlayer = new MediaPlayer();
             switch (songName)
             {
@@ -48,6 +50,16 @@ namespace amusic
                     return Resource.Raw.TheGrinch;
                 case "GangGang":
                     return Resource.Raw.GangGang;
+                case "BackInBack":
+                    return Resource.Raw.BackInBack;
+                case "Darkness":
+                    return Resource.Raw.Darkness;
+                case "Kamikaze":
+                    return Resource.Raw.Kamikaze;
+                case "Thunderstuck":
+                    return Resource.Raw.Thunderstuck;
+                case "YouShookMeAllNight":
+                    return Resource.Raw.YouShookMeAllNightLong;
             }
 
             return 0;

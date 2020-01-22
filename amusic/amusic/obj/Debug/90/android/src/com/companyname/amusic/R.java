@@ -4839,8 +4839,13 @@ public final class R {
     public static final int ic_launcher_round=0x7f0c0002;
   }
   public static final class raw {
-    public static final int ganggang=0x7f0d0000;
-    public static final int thegrinch=0x7f0d0001;
+    public static final int backinback=0x7f0d0000;
+    public static final int darkness=0x7f0d0001;
+    public static final int ganggang=0x7f0d0002;
+    public static final int kamikaze=0x7f0d0003;
+    public static final int thegrinch=0x7f0d0004;
+    public static final int thunderstuck=0x7f0d0005;
+    public static final int youshookmeallnightlong=0x7f0d0006;
   }
   public static final class string {
     public static final int abc_action_bar_home_description=0x7f0e0000;
